@@ -1,0 +1,18 @@
+.breadcrumb-wrap
+	.container
+		.row
+			.col-12
+
+				+b.breadcrumb
+					+e('ul').__list(itemscope itemtype="http://schema.org/BreadcrumbList")
+						+e('li').__item(itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem")
+							a(href="/" title="Главная" itemprop="item")
+								span(itemprop="name") Главная
+								meta(itemprop="position" content="0")
+						+e('li').__item.--mobile(itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem")
+							a(href="#" title="Внутренняя" itemprop="item")
+								span(itemprop="name") Внутренняя
+								meta(itemprop="position" content="2")
+						+e('li').__item.active(itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem")
+							span(itemprop="name") Заголовок страницы
+							meta(itemprop="position" content="2")

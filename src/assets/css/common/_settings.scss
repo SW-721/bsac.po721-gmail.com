@@ -1,0 +1,39 @@
+// Grid
+$xl: 1600px;
+$lg: 1024px;
+$md: 768px;
+$sm: 576px;
+
+$gutter: 30px;
+
+$grid-breakpoints: (
+	xs: 0,
+	sm: $sm,
+	md: $md,
+	lg: $lg,
+	xl: $xl
+);
+
+$container-max-widths: (
+	sm: 540px,
+	md: 720px,
+	lg: 960px,
+	xl: 1600px
+);
+
+// Fonts types
+$c-size: 14px;
+$font-1: 'FiraSans', sans-serif;
+$font-2: 'BadScript', sans-serif;
+
+// Colors
+$c-main:		#2E6ECF;
+$c-main-light:	#96B6E6;
+$c-bg:			#173056;
+$c-text:		#333;
+$trp:			transparent;
+
+
+$colors: (
+	red: $c-main,
+);

@@ -1,0 +1,76 @@
+.modal
+
+	.modal-dialog
+		margin-top: 150px
+
+	.modal-content
+		border: none
+		border-radius: 3px
+
+	.modal-header
+		border: none
+		border-radius: 0
+		padding: 0
+
+	.close-popup
+		position: absolute
+		right: 13px
+		top: 13px
+		width: 34px
+		height: 34px
+		background: 0 0
+		border: none
+		cursor: pointer
+		z-index: 10
+		transform: rotate(45deg)
+		+transish
+
+		&:after
+			content: ''
+			position: absolute
+			display: block
+			width: 18px
+			height: 2px
+			top: 16px
+			left: 8px
+			transform: rotate(0deg)
+			background-color: #929292
+
+		&:before
+			content: ''
+			position: absolute
+			display: block
+			width: 18px
+			height: 2px
+			top: 16px
+			left: 8px
+			transform: rotate(90deg)
+			background-color: #929292
+
+		&:hover
+			transform: rotate(225deg)
+
+	.modal-body
+		padding: 50px 70px 80px
+
+		+media($lg)
+			padding: 30px
+
+		+media($sm)
+			padding: 20px 10px
+
+	.modal-title
+		text-align: center
+
+		&-text
+
+		&-descr
+			max-width: 620px
+			margin: 0 auto
+			font-size: 17px
+
+	.modal-content
+		margin-top: 70px
+
+		+media($lg)
+			margin-top: 30px

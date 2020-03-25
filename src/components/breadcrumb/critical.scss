@@ -1,0 +1,336 @@
+@import '../../assets/css/common/components-import';
+
+
+
+.breadcrumb {
+	padding: 25px 0;
+	overflow: hidden;
+
+	ul {
+		display: flex;
+		white-space: nowrap;
+	}
+
+	&__list {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+		display: flex;
+		align-items: center;
+		justify-content: flex-start;
+	}
+
+	&__item {
+
+		@include media($md) {
+			display: none;
+		}
+
+		&:last-child {
+			padding-right: 0;
+
+			span {
+				display: block;
+				color: $c-text;
+			}
+
+			a {
+
+				&:before {
+					content: none;
+				}
+			}
+
+		}
+
+		&.active {
+			padding-right: 0;
+
+			@include media($md) {
+				display: block !important;
+			}
+
+			span {
+				display: block;
+				padding: 5px 0;
+				font-size: 10px;
+				line-height: 1;
+				letter-spacing: 0.5px;
+				color: #000;
+			}
+
+			a {
+				color: #7C7C7C;
+				pointer-events: none;
+
+				&:before {
+					content: none;
+				}
+			}
+		}
+
+		&--mobile {
+
+			@include media($md) {
+				display: block;
+
+				a {
+					padding-right: 0;
+					padding-left: 15px;
+
+					&:before {
+						top: 12px !important;
+						right: auto !important;
+						left: 2px !important;
+						transform: rotate(-135deg) !important;
+
+						@include media($sm) {
+							top: 9px !important;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	a {
+		position: relative;
+		display: block;
+		padding: 5px 25px 5px 0;
+		font-size: 10px;
+		line-height: 1;
+		font-weight: 400;
+		color: #7C7C7C;
+		letter-spacing: 0.5px;
+		cursor: pointer;
+		@include transish;
+
+		&:before {
+			@include pseudo;
+			width: 9px;
+			height: 5px;
+			top: 7px;
+			right: 9px;
+			background: url('../images/breadcrumb-arrow.svg') no-repeat 50% 50%;
+			background-size: cover;
+		}
+
+		&:hover {
+			color: $c-main;
+			text-decoration: none;
+		}
+	}
+
+	&--menu {
+		
+		li {
+			position: relative;
+
+			&:hover {
+				.drop-breadcrmb {
+					z-index: 10;
+					opacity: 1;
+					transform: translate(-50%, 0px);
+				}
+			}
+		}
+
+		.drop-breadcrmb {
+			position: absolute;
+			display: block;
+			top: 100%;
+			padding: 0;
+			box-shadow: 0 0 10px 0 rgba(0, 0, 0, .07);
+			background: #fff;
+			z-index: -1;
+			opacity: 0;
+			transform: translate(-50%, -15px);
+			transition: .4s;
+			left: calc(50% - 15px);
+			min-width: 130px;
+			text-align: center;
+			border-bottom: 1px solid darken($c-bg, 10%);
+			margin: 5px 0 0;
+
+			&:after {
+				content: '';
+				position: absolute;
+				left: 0;
+				top: -5px;
+				width: 100%;
+				height: 5px;
+			}
+
+			&:before {
+				content: '';
+				position: absolute;
+				left: 50%;
+				top: 0;
+				background-color: #fff;
+				border: 1px solid #fff;
+				box-shadow: -4px -4px 6px 0 rgba(255, 255, 255, 0.2);
+				border-right: 0;
+				border-bottom: 0;
+				width: 15px;
+				height: 15px;
+				transform: rotate(45deg);
+				margin: -3px 0 0 -6px;
+			}
+
+			&__item {
+				transition: .3s;
+				padding-right: 0;
+				display: block;
+				width: 100%;
+
+				&:last-child {
+					.drop-breadcrmb__link {
+						border-bottom: 0;
+					}
+				}
+			}
+
+			&__link {
+				padding: 10px 15px;
+				transition: .3s;
+				display: block;
+				text-align: center;
+				white-space: nowrap;
+
+				&:before {
+					content: none;
+				}
+
+				&:hover {
+					color: #fff;
+					background: $c-main;
+					text-decoration: none;
+
+				}
+			}
+		}
+	}
+
+	&--compress {
+		position: relative;
+		overflow: hidden;
+
+		ul {
+			display: inline-flex;
+			flex-wrap: nowrap;
+			position: relative;
+			max-width: 100%;
+
+			li {
+				padding-left: 0;
+				
+				&:last-child {
+					position: absolute;
+					right: 24px;
+					top: 0px;
+					transform: translateX(100%);
+					background: #fff;
+					padding: 0px 0 0px 25px;
+					z-index: 1;
+
+					@include media($md) {
+						position: relative;
+						right: auto;
+						top: auto;
+						padding-left: 19px;
+						transform: none;
+					}
+					
+					&:before {
+						@include pseudo;
+						width: 9px;
+						height: 5px;
+						top: 7px;
+						left: 6px;
+						background: url('../images/breadcrumb-arrow.svg') no-repeat 50% 50%;
+						background-size: cover;
+
+						@include media($md) {
+							left: 0;
+							transform: rotate(180deg);
+						}
+					}
+
+					&:after {
+						@include pseudo;
+						width: 20vw;
+						height: 100%;
+						top: 0;
+						left: 100%;
+						bottom: 0;
+						background-color: #fff;
+						z-index: -1;
+
+						@include media($md) {
+							display: none;
+						}
+					}
+				}
+				&:before {
+					content: none;
+				}
+			}
+		}
+
+		.item-press {
+			position: relative;
+			display: flex;
+			align-items: center;
+
+			@include media($md) {
+				display: none;
+			}
+
+			&:after {
+				content: none;
+				font-size: 14px;
+				line-height: 1.4;
+				color: darken($c-main, 20%);
+				padding-left: 3px;
+			}
+
+			// &.active {
+
+			// 	&:before {
+			// 		content: none;
+			// 	}
+			// }
+
+			> a {
+				width: auto;
+				max-width: 160px;
+				overflow: hidden;
+				display: block;
+				transition: max-width 1s;
+				white-space: nowrap;
+				text-overflow: ellipsis;
+
+				&:hover {
+					max-width: 1000px;
+				}
+			}
+		}
+
+		li a,
+		li span {
+			white-space: nowrap;
+		}
+
+	}
+
+	&.not-init {
+
+		.breadcrumb__item {
+
+			&:not(:first-child) {
+				opacity: 0;
+				visibility: hidden;
+			}
+		}
+	}
+}

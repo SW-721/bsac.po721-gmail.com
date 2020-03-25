@@ -1,0 +1,53 @@
+.bridge-logo2
+	display: flex
+
+	&__part
+		width: 61px
+		height: 52px
+
+		.filled
+			fill: $c-main
+			opacity: 1
+			+transish(0.5s)
+
+		.stroked
+			stroke: #fff
+			stroke-width: 1
+			opacity: 0
+			+transish(0.5s)
+
+		&.active
+			
+			.filled
+				opacity: 1
+
+			.stroked
+				opacity: 0
+
+			& + .bridge-logo2__part
+
+				.stroked
+					opacity: 1 !important
+					stroke: $c-main
+
+					path
+						stroke-dasharray: 1000
+						stroke-dashoffset: 1000
+						animation: dash2 5s ease forwards
+
+			& ~ .bridge-logo2__part
+
+				.filled
+					opacity: 0
+
+				.stroked
+					opacity: 1
+
+	svg
+		display: block
+		width: 100%
+		height: 100%
+
+@keyframes dash2
+	to
+		stroke-dashoffset: 0

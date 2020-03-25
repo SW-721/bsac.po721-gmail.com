@@ -1,0 +1,282 @@
+@import '../../assets/css/common/components-import';
+
+.modal-auth {
+
+	.modal-dialog {
+		max-width: 520px;
+		margin-top: 150px;
+	}
+
+	.modal-content {
+		border-radius: 0;
+	}
+
+	.modal-header {
+		padding: 0;
+		border-bottom: none;
+	}
+
+	// Анимации переключения окон в форме логина
+	.modal-body {
+		padding: 30px 40px 40px;
+		opacity: 1;
+		visibility: visible;
+		transform: scale(1) translate(0, 0);
+		transition: opacity 0.2s, visibility 0.4s, transform 0.4s;
+		overflow: hidden;
+
+		@include media($md) {
+			padding: 30px 15px 20px;
+		}
+	}
+
+	.hide-body {
+		position: absolute !important;
+		opacity: 0;
+		visibility: hidden;
+		transform: scale(0.95) translate(0, 10px);
+	}
+
+	.header-tabs {
+		display: flex;
+		flex-wrap: nowrap;
+		align-items: center;
+		margin: -30px -40px 30px -40px;
+
+		@include media($md) {
+			margin: -30px -15px 30px -15px;
+		}
+
+		&__item {
+			color: $c-main;
+			font-size: rem(24);
+			line-height: 1;
+			padding: rem(30) rem(40);
+			text-transform: uppercase;
+			cursor: pointer;
+			background: $c-bg;
+			transition: .3s;
+			box-shadow: inset 0px 0px 3px 0px rgba(101, 114, 141, 0.31);
+
+			&:hover {
+				opacity: 0.8;
+			}
+
+			&--active {
+				background: #fff;
+				color: $c-text;
+				pointer-events: none;
+				box-shadow: none;
+			}
+
+			&:last-child {
+				flex: 1;
+			}
+
+			@media screen and (max-width: 767px) {
+				padding: 20px;
+				font-size: 16px;
+			}
+		}
+	}
+
+	.page-tabs {
+
+		&__item {
+			max-height: 0;
+			overflow: hidden;
+			transition: .5s;
+			margin-top: 0;
+			padding-top: 0;
+
+			&--active {
+				max-height: 700px;
+				margin-top: -30px;
+				padding-top: 30px;
+			}
+		}
+	}
+
+
+	.form-group {
+		position: relative;
+		margin: 0 50px 35px;
+
+		@include media($md) {
+			margin: 0 0 35px;
+		}
+
+		// Плавающий label в поле при фокусе в инпут
+		.control-label {
+			position: absolute;
+			top: 11px;
+			left: 10px;
+			transition: 0.3s;
+			z-index: 20;
+
+			.asterisk {
+				color: red;
+			}
+		}
+
+		.help-block {
+			position: absolute;
+			bottom: -15px;
+			left: 0;
+			font-size: 12px;
+			line-height: 1;
+			color: #f66;
+		}
+
+		.checkbox {
+			margin-bottom: 0;
+
+			input {
+				display: block;
+				position: absolute;
+				width: 0;
+				height: 0;
+				opacity: 0;
+				visibility: hidden;
+				-moz-appearance: checkbox;
+				-webkit-appearance: checkbox;
+			}
+
+			label {
+				margin-bottom: 0;
+			}
+		}
+
+		&.focus-in {
+
+			.control-label {
+				top: -17px;
+				left: 0;
+				font-size: 12px;
+			}
+		}
+
+		&.has-success {
+
+			.form-control {
+				border-color: $c-main;
+				color: $c-text;
+			}
+		}
+
+		&.has-error {
+
+			.form-control {
+				color: $c-text;
+				border-color: #f66;
+			}
+
+			.checkbox {
+
+				label {
+
+					&:before {
+						border-color: red;
+					}
+				}
+			}
+		}
+	}
+
+	.hr {
+		position: relative;
+		text-align: center;
+		margin: rem(15) 0 rem(10) 0;
+
+		&:before {
+			content: '';
+			position: absolute;
+			left: 0;
+			right: 0;
+			top: 50%;
+			transform: translateY(-50%);
+			height: 1px;
+			width: 100%;
+			background: $c-bg;
+		}
+
+		span {
+			padding: rem(5) rem(25);
+			background: #fff;
+			font-size: 14px;
+			color: $c-text;
+			display: inline-block;
+			z-index: 2;
+			position: relative;
+			font-weight: 500;
+
+		}
+	}
+
+	.action-group {
+		text-align: center;
+
+		&:not(:last-child) {
+			margin-bottom: 20px;
+		}
+	}
+
+	.auth-link {
+		display: block;
+		font-size: 14px;
+		color: $c-main;
+		font-weight: 500;
+
+		&:hover {
+			text-decoration: underline;
+		}
+
+		&:not(:last-child) {
+			margin-bottom: 20px;
+		}
+	}
+
+	.auth-title {
+		margin-bottom: 20px;
+		font-size: 24px;
+		font-weight: 700;
+		color: $c-text;
+		line-height: 1.4;
+		text-align: center;
+	}
+
+	.auth-descr {
+		margin-bottom: 20px;
+		font-size: 16px;
+		line-height: 1.6;
+		font-weight: 300;
+		text-align: center;
+	}
+
+	.social {
+		justify-content: center;
+
+		&__item {
+
+			.icon {
+				fill: $c-main
+			}
+		}
+	}
+
+	.close-popup {
+		top: 23px;
+
+		@include media($md) {
+			top: 11px;
+			right: 5px;
+		}
+	}
+
+	&.slam-modal {
+
+		.modal-body {
+			padding: 30px 40px 40px;
+		}
+	}
+}

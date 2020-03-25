@@ -1,0 +1,28 @@
+.big-list
+
+	&__item
+		padding-left: 70px
+
+		&:not(:last-child)
+			margin-bottom: 60px
+
+		&-title
+			position: relative
+			margin-bottom: 10px
+			padding-bottom: 10px
+			font-size: 18px
+			font-weight: 300
+			line-height: 1.5
+			border-bottom: 1px solid #D9D9D9
+
+			.icon
+				position: absolute
+				+sizeblock(45px, 30px)
+				+hcenter
+				left: -70px
+				fill: $c-main
+
+		&-descr
+			font-size: 14px
+			font-weight: 300
+			line-height: 1.5

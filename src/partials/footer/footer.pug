@@ -1,0 +1,90 @@
++b('footer').footer(style='opacity:0;visibility:hidden;')
+
+	.scroll-top.js_scroll-top
+
+	+e.__top
+		.container
+			.row
+				.col-12
+
+					+e.__inner
+
+						+e.__descr
+							+e.__descr-item
+								+e.__descr-title ООО «Коробочный магазин»
+								+e.__descr-text «Эльдорадо» — российская сеть цифровой электроники и бытовой техники.
+								+e.__descr-text Входит в Группу #[br] «М.Видео-Эльдорадо» (ПАО «М.видео») — которая объединяет бренды  «М.Видео» и «Эльдорадо», а также маркетплейс Goods.
+
+						+e.__descr
+							+e.__descr-item
+								+e.__descr-title Головной офис:
+								+e.__descr-text Санкт-Петербург,#[br] ул. Академика Королева 21,#[br] 3 этаж, офис 41
+							+e.__descr-item
+								+e.__descr-title Время работы:
+								+e.__descr-text Без выходных и праздников #[span.db Пн–Пт 8:30–19:00] #[span.db Сб–Вс 10:30–19:00]
+
+						+e.__menu.nav-menu
+							+e.__menu-title.js_footer-menu
+								+e.__menu-title-text Меню
+									+icon('burger')
+							ul.nav-menu__list
+								li.nav-menu__item.active
+									span.nav-menu__link Компания
+								li.nav-menu__item
+									a.nav-menu__link(href='#') Каталог товаров
+								li.nav-menu__item
+									a.nav-menu__link(href='#') Услуги
+								li.nav-menu__item
+									a.nav-menu__link(href='#') Спецпредложения
+								li.nav-menu__item
+									a.nav-menu__link(href='#') Проекты
+								li.nav-menu__item
+									a.nav-menu__link(href='#') Информация и новости
+								li.nav-menu__item
+									a.nav-menu__link(href='#') Контакты
+								li.nav-menu__item
+									a.nav-menu__link(href='#') Команда и вакансии
+								li.nav-menu__item
+									a.nav-menu__link(href='#') Оплата
+								li.nav-menu__item
+									a.nav-menu__link(href='#') Отзывы
+								li.nav-menu__item
+									a.nav-menu__link(href='#') Доставка
+								li.nav-menu__item
+									a.nav-menu__link(href='#') Бонусная программа
+
+						+e.__contacts-wrap
+
+							+e.__contacts
+								+link-icon('mail', 'i-mail', 'info@korobochny.magazin.mail.ru')
+								+link-icon('skype', 'i-skype', 'korobochny.magazin.skype.ru')
+								//- include ../../blocks/phones-accordion/phones-accordion
+
+							+e.__social
+								//- include ../../blocks/social/social
+
+	+e.__bot
+		.container
+			.row
+				.col-12
+
+					+e.__bot-inner
+
+						+e.__bot-left
+
+							+e.__bot-license
+								+e.__text © 2019, ЗАО «Банк «Решение» Лицензия НБ РБ №14 от 08.06.2016
+
+							+e('nav').__bot-menu
+								+e('a').__bot-menu-link(href='#') Контакты
+								+e('a').__bot-menu-link(href='#') Карта сайта
+
+						+e.__bot-right
+
+							+e.__bot-reestr
+								+e.__text В торговом реестре с 23 июня 2010г.
+								+e.__text Регистрация №190806803, 22.07.2007, Мингорисполком
+
+							+e.__bot-dev
+								+icon('slam')
+								+e('a').__text(href='#') Разработка сайта — SLAM

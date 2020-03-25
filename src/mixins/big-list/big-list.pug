@@ -1,0 +1,9 @@
+mixin big-list(data)
+
+	+b.big-list
+
+		each item in data
+			+e.__item
+				+e.__item-title= item.title
+					+icon('arrow')
+				+e.__item-descr= item.descr

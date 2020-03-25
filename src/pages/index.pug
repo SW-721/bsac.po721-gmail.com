@@ -1,0 +1,33 @@
+extends ../layout/layout
+
+block vars
+	- var bodyClass = ''
+	- var footerClass = ''
+	- var headerClass = ''
+	- var pageTitle = 'Abus bank'
+	- var dir = './'
+	- var layout = ''
+	- var componentsList = []
+	- var componentsCriticalList = []
+	- var componentsScriptsList = []
+
+
+block main
+
+	include ../blocks/hero/hero
+		
+	
+
+block popups
+
+//- block componentsCriticalStyles
+	+componentsCriticalStyles-includer()
+
+//- block componentsStyles
+	+style-includer()
+
+//- block componentsScripts
+	+componentsScripts-includer()
+
+block scripts
+	script(src='./js/vendor/fullpage2.min.js')

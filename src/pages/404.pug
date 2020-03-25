@@ -1,0 +1,31 @@
+extends ../layout/layout
+
+block vars
+	- var bodyClass = ''
+	- var footerClass = ''
+	- var headerClass = ''
+	- var pageTitle = 'Запуск скоро'
+	- var dir = './'
+	- var layout = ''
+	- var componentsList = []
+	- var componentsCriticalList = []
+	- var componentsScriptsList = []
+
+
+block main
+
+	include ../blocks/inner-pages/404
+
+block popups
+
+//- block componentsCriticalStyles
+	+componentsCriticalStyles-includer()
+
+//- block componentsStyles
+	+style-includer()
+
+//- block componentsScripts
+	+componentsScripts-includer()
+
+block scripts
+	script(src='./js/vendor/fullpage2.min.js')

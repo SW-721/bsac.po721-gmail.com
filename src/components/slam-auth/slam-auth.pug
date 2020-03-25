@@ -1,0 +1,85 @@
+include ./slam-auth_modal-all
+include ./slam-auth_modal-change-pass
+
+script.
+	var ready = (callback) => {
+		document.readyState != "loading" ? callback() : document.addEventListener("DOMContentLoaded", callback);
+	}
+	ready(() => {
+
+		$('.modal-auth').on('shown.bs.modal', function () {
+			$.getScript('/app/js/vendor/bootstrapValidator.min.js', function() {
+				//- Валидация
+				$('.bv-form').bootstrapValidator();
+			});
+			$.getScript('/app/js/vendor/jquery.inputmask.min.js', function () {
+				// Маска для телефона
+				Inputmask({
+					oncomplete: function() {
+						$('.bv-form').data('bootstrapValidator').updateStatus($(this).attr('name'), 'VALID', null);
+					},
+					onincomplete: function() {
+						$('.bv-form').data('bootstrapValidator').updateStatus($(this).attr('name'), 'INVALID', null);
+					},
+				}).mask(document.querySelectorAll("input[type='tel']"));
+			});
+		});
+
+		var inputWrappers = $('.form-group');
+		inputWrappers.each(function () {
+			var wrap = $(this);
+			var input = wrap.find('.form-control');
+
+			if (input.val() !== '') {
+				wrap.addClass('focus-in');
+			}
+
+			input.off('focus.initInputs').on('focus.initInputs', function () {
+				wrap.addClass('focus-in');
+			});
+
+			input.off('blur.initInputs').on('blur.initInputs', function () {
+				if (input.val() === '') {
+					wrap.removeClass('focus-in');
+				}
+			});
+		});
+
+		// Переключение табов войти/регистрация
+		$(document).on('click', '.header-tabs__item', function () {
+			$('.header-tabs__item').removeClass('header-tabs__item--active')
+			$(this).addClass('header-tabs__item--active')
+			var index_el = $(this).index();
+			$('.page-tabs__item').removeClass('page-tabs__item--active');
+			$('.page-tabs__item').eq(index_el).addClass('page-tabs__item--active');
+		});
+
+		// Удалить на бэке
+		// Анимации переключение окон в форме
+		$('.js_link-forget-pass').on('click', function() {
+			$('#smart_auth-tab-wrapper').addClass('hide-body');
+			$('#smart_auth-forget').removeClass('hide-body');
+		});
+		$('.js_link-login').on('click', function() {
+			$('#smart_auth-tab-wrapper').removeClass('hide-body');
+			$('#smart_auth-forget').addClass('hide-body');
+		});
+		$('.js_link-success').on('click', function() {
+			$('#smart_auth-tab-wrapper').addClass('hide-body');
+			$('#smart_auth-success').removeClass('hide-body');
+		});
+		$('.js_link-confirm').on('click', function() {
+			$('#smart_auth-tab-wrapper').addClass('hide-body');
+			$('#smart_auth-confirm').removeClass('hide-body');
+		});
+
+		// Удалить на бэке
+		// Сброс состояния окон авторизации
+		$('.close-popup').on('click', function() {
+			$('#smart_auth-tab-wrapper').removeClass('hide-body');
+			$('#smart_auth-forget').addClass('hide-body');
+			$('#smart_auth-confirm').addClass('hide-body');
+			$('#smart_auth-success').addClass('hide-body');
+		});
+
+	});

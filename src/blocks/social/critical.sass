@@ -1,0 +1,24 @@
+.social
+	display: flex
+	flex-wrap: wrap
+
+	&__item
+		display: flex
+		align-items: center
+		justify-content: center
+		+sizeblock(24px)
+
+		&:not(:last-child)
+			margin-right: 70px
+
+		&:hover
+
+			.icon
+				fill: $c-main
+				transform: scale(1.2)
+
+		.icon
+			display: block
+			+sizeblock(24px)
+			fill: #97B7E7
+			+transish

@@ -1,0 +1,38 @@
+// Модальное окно Смена пароля
+
+.modal-auth.modal.fade#modalChangePass
+	.modal-dialog
+		.modal-content
+			
+			.modal-header
+				.close-popup(data-dismiss="modal" aria-hidden="true")
+
+			#smart_auth-change_pass.modal-body
+				.auth-title Смена пароля
+				form#change_form.bv-form(enctype='multipart/form-data', method='POST', action='#', novalidate, autocomplete='on')
+					.form-group
+						label.control-label(for='FORM5_FIELD_PASS1') Пароль#[span.asterisk *]
+						input#FORM5_FIELD_PASS1.form-control.form-group__input(
+							type='password',
+							name='password',
+							data-bv-field='password',
+							data-bv-message='Введите пароль',
+							data-bv-identical="true",
+							data-bv-identical-field="confirmPassword",
+							data-bv-identical-message='Пароли не совпадают', 
+							required
+						)
+					.form-group
+						label.control-label(for='FORM5_FIELD_PASS2') Повторите пароль#[span.asterisk *]
+						input#FORM5_FIELD_PASS2.form-control.form-group__input(
+								type='password',
+								name='confirmPassword',
+								data-bv-field='confirmPassword',
+								data-bv-message='Введите пароль',
+								data-bv-identical="true",
+								data-bv-identical-field="password",
+								data-bv-identical-message='Пароли не совпадают',
+								required
+							)
+					.action-group
+						button.btn(type='submit') Отправить

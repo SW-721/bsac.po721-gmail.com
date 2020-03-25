@@ -1,0 +1,159 @@
+// Группа модальных окон Войти/Регистрация
+
+.modal-auth.modal.fade#modalLogin
+	.modal-dialog
+		.modal-content
+			
+			.modal-header
+				.close-popup(data-dismiss="modal" aria-hidden="true")
+			
+			#smart_auth-tab-wrapper.modal-body
+				
+				.header-tabs
+					.header-tabs__item.header-tabs__item--active Войти
+					.header-tabs__item Регистрация
+				
+				.page-tabs
+
+					.page-tabs__item.page-tabs__item--active
+						form.bv-form(enctype='multipart/form-data', method='POST', action='', novalidate, autocomplete='on')
+							.form-group
+								label.control-label(for='FORM1_FIELD_EMAIL') Ваш E-mail#[span.asterisk *]
+								input#FORM1_FIELD_EMAIL.form-control(
+										type='email',
+										name='FIELDS[EMAIL]',
+										data-bv-field='FIELDS[EMAIL]',
+										data-bv-message='Укажите свой e-mail', 
+										data-bv-emailaddress-message='E-mail введен некорректно',
+										required
+									)
+							.form-group
+								input#FORM1_FIELD_PASS.form-control(
+										type='password', 
+										name='FIELDS[PASS]',
+										data-bv-field='FIELDS[PASS]',
+										data-bv-message='Необходимо ввести пароль.',
+										required
+									)
+								label.control-label(for='FORM1_FIELD_PASS') Пароль#[span.asterisk *]
+							.action-group
+								a.auth-link.js_link-forget-pass(href="javascript:void(0);") Забыли пароль?
+							.action-group
+								button.btn(type='submit') Войти
+						
+						.modal-body__footer
+							.hr
+								span или
+							
+							include ../../blocks/social/social
+					
+					.page-tabs__item
+						form.bv-form(enctype='multipart/form-data', method='POST', action='', novalidate, autocomplete='on')
+							.form-group
+								label.control-label(for='FORM2_FIELD_NAME') Имя#[span.asterisk *]
+								input#FORM2_FIELD_NAME.form-control(
+									type='text',
+									name='FIELDS[NAME]',
+									data-bv-field='FIELDS[NAME]',
+									data-bv-message='Укажите Ваше имя', 
+									required
+								)
+							.form-group
+								label.control-label(for='FORM2_FIELD_EMAIL') Ваш E-mail#[span.asterisk *]
+								input#FORM2_FIELD_EMAIL.form-control(
+									type='email',
+									name='FIELDS[EMAIL]',
+									data-bv-field='FIELDS[EMAIL]',
+									data-bv-message='Укажите свой e-mail', 
+									data-bv-emailaddress-message='E-mail введен некорректно',
+									required
+								)
+							.form-group
+								label.control-label(for='FORM2_FIELD_PASS1') Пароль#[span.asterisk *]
+								input#FORM2_FIELD_PASS1.form-control(
+									type='password',
+									name='password',
+									data-bv-field='password',
+									data-bv-message='Введите пароль',
+									data-bv-identical="true",
+									data-bv-identical-field="confirmPassword",
+									data-bv-identical-message='Пароли не совпадают', 
+									required
+								)
+							.form-group
+								label.control-label(for='FORM2_FIELD_PASS2') Повторите пароль#[span.asterisk *]
+								input#FORM2_FIELD_PASS2.form-control(
+										type='password',
+										name='confirmPassword',
+										data-bv-field='confirmPassword',
+										data-bv-message='Введите пароль',
+										data-bv-identical="true",
+										data-bv-identical-field="password",
+										data-bv-identical-message='Пароли не совпадают',
+										required
+									)
+							.form-group
+								.checkbox
+									input(
+										type='checkbox',
+										id="news", 
+										name='FIELDS[ACCEPT]', 
+										checked, 
+										value='Да', 
+										required, 
+										data-bv-message='Необходимо дать согласие', 
+										data-bv-field='FIELDS[ACCEPT]'
+									)
+									label(for="news") Нажимая на кнопку "Отправить заявку", вы даете согласие на обработку #[a(href="#") персональных данных]
+							.action-group
+								button.btn(type='submit') Регистрация
+							.action-group
+								a.auth-link.js_link-success(href="javascript:void(0);") Регистрация успех
+								a.auth-link.js_link-confirm(href="javascript:void(0);") Подтверждение регистрации
+						
+						.modal-body__footer
+							.hr
+								span или
+							
+							include ../../blocks/social/social
+
+			#smart_auth-forget.modal-body.hide-body
+				.auth-title Забыли пароль?
+				.auth-descr Укажите адрес электронной почты, который вы использовали при регистрации
+				form.bv-form(enctype='multipart/form-data', method='POST', action='#', novalidate, autocomplete='on')
+					.form-group
+						label.control-label(for='FORM3_FIELD_EMAIL') Ваш E-mail#[span.asterisk *]
+						input#FORM3_FIELD_EMAIL.form-control(
+							type='email',
+							name='FIELDS[EMAIL]',
+							data-bv-field='FIELDS[EMAIL]',
+							data-bv-message='Укажите свой e-mail', 
+							data-bv-emailaddress-message='E-mail введен некорректно',
+							required
+						)
+					.action-group
+						button.btn(type='submit') Восстановить пароль
+					.action-group
+						a.auth-link.js_link-login(href='javascript:void(0);') Вспомнил пароль
+
+			#smart_auth-confirm.modal-body.hide-body
+				.auth-title Подтверждение регистрации
+				.auth-descr Мы отправили Вам на почту #[b '##'] код. Пожалуйста, введите его в поле ниже для подтверждения аккаунта.
+				form.bv-form(enctype='multipart/form-data', method='POST', action='#', novalidate, autocomplete='on')
+					.form-group
+						label.control-label(for='FORM4_FIELD_CODE') Код#[span.asterisk *]
+						input#FORM4_FIELD_CODE.form-control(
+							type='text',
+							name='FIELDS[CONFIRM_CODE]',
+							data-bv-field='FIELDS[CONFIRM_CODE]',
+							data-bv-message='Укажите полученный код', 
+							required
+						)
+					.action-group
+						button.btn(type='submit') Подтвердить
+
+			#smart_auth-success.modal-body.hide-body
+				.auth-title Спасибо за обращение
+				.auth-descr Ожидайте связи с нашим оператором.
+				.action-group
+					button(type='submit' data-dismiss="modal" aria-hidden="true").btn Перейти на сайт

@@ -1,0 +1,99 @@
+@import '_sprite';
+
+$baseFontSize: 16px !default;
+
+@import '_mixins';
+
+.i-bg {
+	position: relative;
+	display: inline-block;
+	width: 16px;
+	height: 16px;
+	font-size: 16px;
+
+	&:before {
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+	}
+
+	&--soc {
+		width: 100px;
+		height: 100px;
+	}
+
+	&--file {
+		width: 20px;
+		height: 24px;
+	}
+}
+
+.i-question {
+	width: 12px;
+	height: 12px;
+
+	&:before {
+		content: '';
+		@include sprite('i-question');
+	}
+}
+
+.socials--i-fb {
+
+	&:before {
+		content: '';
+		@include sprite('social--i-fb');
+	}
+}
+
+.socials--i-google {
+
+	&:before {
+		content: '';
+		@include sprite('social--i-google');
+	}
+}
+
+.socials--i-vk {
+
+	&:before {
+		content: '';
+		@include sprite('social--i-vk');
+	}
+}
+
+
+
+
+
+
+
+
+
+
+.file--i-avi {
+	width: 40px;
+	height: 48px;
+	font-size: 32px;
+
+	&:before {
+		content: '';
+		@include sprite('file--i-avi');
+	}
+}
+
+
+
+// @each $key, $value in $icons {
+
+// 	.#{$key} {
+
+// 		&:before {
+// 			content: '';
+// 			@include sprite(#{$key});
+// 		}
+// 	}
+// }
+

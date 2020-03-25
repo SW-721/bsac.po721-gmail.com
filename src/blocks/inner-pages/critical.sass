@@ -1,0 +1,87 @@
+@import '../../assets/css/common/components-import'
+
+
+
+.page404
+	position: relative
+	// min-height: 100vh
+	z-index: 5
+
+	&__inner
+		position: relative
+		display: flex
+		flex-direction: column
+		height: 100vh
+		padding: 50px 20px 0
+		text-align: center
+		z-index: 10
+
+		+media($sm)
+			// min-height: 400px
+
+	&__num
+		position: relative
+		margin-bottom: 25px
+		font-size: 130px
+		line-height: 1
+		font-weight: 700
+		color: $c-main
+
+	&__title
+		margin-top: 60px
+		font-size: 40px
+		line-height: 1.2
+		font-weight: 700
+
+		+media($md)
+			font-size: 20px
+
+	&__descr
+		margin: 10px auto 0
+		padding: 0 15px
+		font-size: 12px
+		max-width: 480px
+
+	&__bg
+		position: absolute
+		@extend %trbl
+		+sizeblock(100%)
+
+		img
+			width: 100%
+			height: 100%
+			object-fit: cover
+
+	&__copyright
+		padding: 10px 0
+		font-size: 14px
+		color: #fff
+		text-shadow: 1px 1px 3px #222
+
+	&__link
+		display: block
+		margin-top: auto
+		font-size: 12px
+		color: #fff
+		text-shadow: 1px 1px 3px #222
+
+
+	.social
+		justify-content: center
+		margin-top: 30px
+
+		&__item
+
+			&:hover
+
+				.icon
+					fill: darken($c-main, 15%)
+
+			.icon
+				fill: $c-main
+
+	.logo
+		margin: 0 auto
+
+	.bridge-logo
+		margin-top: 20px

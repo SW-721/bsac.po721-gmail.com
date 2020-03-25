@@ -1,0 +1,53 @@
+@import '../../assets/css/common/components-import'
+@import '../../partials/menu/sidebar-menu/sidebar-menu'
+
+
+
+.sidebar
+
+	+media($lg)
+		position: fixed
+		width: 320px
+		top: 0
+		right: 0
+		bottom: 0
+		background-color: #fff
+		will-change: transform
+		transition: transform .5s ease-in-out;
+		z-index: 1100
+
+		transform: translate(105%,0)
+
+	&__header
+		display: none
+		align-items: center
+		justify-content: space-between
+		height: 69px
+		padding: 0 15px
+		border-bottom: 1px solid $c-bg
+
+		+media($lg)
+			display: flex
+
+		&-title
+			font-size: 18px
+			font-weight: 500
+
+		&-close
+			+sizeblock(20px, 16px)
+
+			.icon
+				fill: $c-main
+
+	&__scroll
+
+		+media($lg)
+			flex-wrap: nowrap
+			flex-direction: column
+			align-items: stretch
+			justify-content: space-between
+			height: calc(100% - 69px)
+			overflow-y: auto
+
+	&.open
+		transform: translate(0, 0)

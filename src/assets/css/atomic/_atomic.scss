@@ -1,0 +1,127 @@
+$maxVal: 100;
+$step: 5;
+$propStart: 0;
+
+@for $num from $propStart through $maxVal / $step {
+	
+	.m#{$propStart} {
+		margin: #{$propStart}px !important;
+	}
+
+	.mb#{$propStart} {
+		margin-bottom: #{$propStart}px !important;
+	}
+
+	.mt#{$propStart} {
+		margin-top: #{$propStart}px !important;
+	}
+
+	.mr#{$propStart} {
+		margin-right: #{$propStart}px !important;
+	}
+
+	.ml#{$propStart} {
+		margin-left: #{$propStart}px !important;
+	}
+
+	.p#{$propStart} {
+		padding: #{$propStart}px !important;
+	}
+
+	.pb#{$propStart} {
+		padding-bottom: #{$propStart}px !important;
+	}
+
+	.pt#{$propStart} {
+		padding-top: #{$propStart}px !important;
+	}
+
+	.pr#{$propStart} {
+		padding-right: #{$propStart}px !important;
+	}
+
+	.pl#{$propStart} {
+		padding-left: #{$propStart}px !important;
+	}
+
+	$propStart: $propStart + $step;
+}
+
+.db {
+	display: block;
+}
+
+.dn {
+	display: none !important;
+}
+
+.hidden {
+	display: none !important;
+}
+
+.tac {
+	text-align: center;
+}
+
+.tal {
+	text-align: left;
+}
+
+.tar {
+	text-align: right;
+}
+
+%trbl {
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+}
+
+.ttu {
+	text-transform: uppercase;
+}
+
+.w100p {
+	width: 100%;
+}
+
+@mixin hidden-up($breakpoint) {
+	@media screen and (min-width: $breakpoint) {
+		display: none !important;
+	}
+}
+
+@mixin hidden-down($breakpoint) {
+	@media screen and (max-width: $breakpoint) {
+		display: none !important;
+	}
+}
+
+@mixin media($breakpoint) {
+	@media screen and (max-width: $breakpoint - 1) {
+		@content;
+	}
+}
+
+@mixin mediaMin($breakpoint) {
+	@media screen and (min-width: $breakpoint) {
+		@content;
+	}
+}
+
+@each $bp,
+$num in $grid-breakpoints {
+
+	@if $bp != 'xs' {
+		.hidden-#{$bp}-up {
+			@include hidden-up($num);
+		}
+	
+		.hidden-#{$bp}-down {
+			@include media($num) {
+				display: none !important;
+			}
+		}
+	}
+}
