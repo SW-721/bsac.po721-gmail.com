@@ -1,3 +1,3 @@
-# TheBridge
+# coursach
 
-Web site for [The Bridge](http://bridge-charity.org.uk/)
+Web site for my coursach
