@@ -1,0 +1,40 @@
+.login
+    display: flex
+    height: 100vh
+    input
+        background: $trp
+        border: 1px solid #fff
+        color: #fff
+        font-weight: 300
+        margin-bottom: 30px
+        border-radius: 5px
+        padding: 10px 25px
+    &--username, &--password
+        input
+            width: 370px
+    &--part
+        width: 50%
+        height: 100vh
+        &__left
+            background: url("../images/login.jpg")
+        &__right
+            background: #373737
+            position: relative
+    &--wrapper
+        position: absolute
+        top: 50%
+        left: 50%
+        transform: translate(-50%, -50%)
+    &--logo
+        margin-bottom: 30px
+        img
+            position: relative
+            left: 50%
+            transform: translateX(-50%)
+    &--form
+        background-color: $c-bg
+        padding: 30px 40px
+        border-radius: 5px
+    &--submit-line
+        display: flex
+        

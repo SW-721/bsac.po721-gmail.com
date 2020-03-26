@@ -1,0 +1,17 @@
+.login
+    .login--part.login--part__left
+    .login--part.login--part__right
+        .login--wrapper
+            .login--logo
+                img(src="images/logo.svg", alt="logo")
+            form.login--form
+                .login--username
+                    input(type="text" placeholder="Логин")
+                .login--password
+                    input(type="password" placeholder="Пароль")
+                .login--submit-line
+                    .login--remember-me
+                        input(type="checkbox", name="rememberme")
+                        label(for="rememberme") Запомнить меня
+                    .login--submit
+                        input(type="submit" value="Войти")

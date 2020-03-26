@@ -59,3 +59,44 @@
 		left: 50%
 		bottom: 50px
 		transform: translateX(-50%)
+
+@media screen and (max-width: 1332px)
+	.hero
+		.title
+			&--main
+				font-size: 60px
+			&--second
+				font-size: 40px
+
+@media screen and (max-width: 1024px)
+	.hero
+		.title
+			&--main
+				font-size: 40px
+			&--second
+				font-size: 30px
+
+@media screen and (max-width: 768px)
+	.hero
+		.button
+			$this: &
+			border: 1px solid #fff
+			border-radius: 50% 
+			width: 35px
+			height: 35px
+			padding: 0
+			&--text
+				display: none
+			&--image
+				top: 50%
+				left: 50%
+				transform: translate(-50%, -50%)
+			&:hover
+				.button--image
+					transform: translate(-50%, -50%)
+					transform-origin: center center
+		.title
+			&--main
+				font-size: 30px
+			&--second
+				font-size: 25px
