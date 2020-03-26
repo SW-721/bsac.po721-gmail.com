@@ -3,9 +3,12 @@
 	background: url("images/hero_bg.jpg")
 	background-position: center center
 	background-size: cover
-	padding-top: 20px
 
 	.header
+		position: absolute
+		top: 20px
+		left: 0
+		right: 0
 		&--logo
 			&:hover
 				cursor: pointer
@@ -37,3 +40,23 @@
 			.button--image
 				transform: scale(1.15) translateY(-50%)
 				transform-origin: top center
+	&--title
+		height: 100%
+		display: flex
+		flex-direction: column
+		justify-content: center
+		align-items: center
+		.title
+			&--main
+				color: $c-main
+				font-size: 72px
+				font-weight: 700
+			&--second
+				color: $c-main-light
+				font-size: 60px
+				font-weight: 400
+	&--scroll-down
+		position: absolute
+		left: 50%
+		bottom: 50px
+		transform: translateX(-50%)

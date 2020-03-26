@@ -1,10 +1,10 @@
 // Grid
-$xl: 1600px;
+$xl: 1332px;
 $lg: 1024px;
 $md: 768px;
 $sm: 576px;
 
-$gutter: 30px;
+$gutter: 20px;
 
 $grid-breakpoints: (
 	xs: 0,
@@ -18,7 +18,7 @@ $container-max-widths: (
 	sm: 540px,
 	md: 720px,
 	lg: 960px,
-	xl: 1600px
+	xl: 1332px
 );
 
 // Fonts types
@@ -28,7 +28,7 @@ $font-2: 'BadScript', sans-serif;
 
 // Colors
 $c-main: 		#c3cf70;
-$c-main-light:	#96B6E6;
+$c-main-light:	#fff;
 $c-bg:			#173056;
 $c-text:		#333;
 $trp:			transparent;
