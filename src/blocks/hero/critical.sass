@@ -3,5 +3,41 @@
 	background: url("images/hero_bg.jpg")
 	background-position: center center
 	background-size: cover
+	padding-top: 20px
 
 	.header
+		&--row
+			display: flex
+			justify-content: space-between
+			align-items: center
+		&--logo
+			&:hover
+				cursor: pointer
+	.button
+		$this: &
+		border: 0
+		background-color: $trp
+		display: flex
+		align-items: center
+		padding: 16px 10px 16px 44px
+		border-bottom: 1px solid #bcbcbc
+		position: relative
+		cursor: pointer
+		transition: background .2s ease
+		outline: none
+		&--text
+			color: #fff
+			font-family: $font-1
+			font-weight: 300
+		&--image
+			position: absolute
+			top: 50%
+			left: 15px
+			transform: translateY(-50%)
+			transition: transform .3s ease
+		&:hover
+			background-color: rgba(255,255,255,.1)
+			//#{$this}--image
+			.button--image
+				transform: scale(1.15) translateY(-50%)
+				transform-origin: top center
