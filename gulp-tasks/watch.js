@@ -15,10 +15,11 @@ module.exports = function (gulp, options, plugins) {
 				options.path.watch.sass, 
 				'!src/assets/css/critical/critical.scss',
 				'!src/assets/css/common/_bootstrap-opts.sass',
+				'!src/assets/css/common/_settings.scss',
 			], gulp.series(gulp.parallel('sass-styles')))
 		
 		//~~~~~~~~~~~ для обновления critical после обновления какого-то scss, добавтиь в массив watch путь к файлу и сверху добавить его но с !
-		gulp.watch(['./src/**/_bootstrap-opts.{scss,sass}'], gulp.series('sass-styles', 'sass-crit', 'pug'))
+		gulp.watch(['./src/**/_bootstrap-opts.{scss,sass}', './src/**/_settings.scss'], gulp.series('sass-styles', 'sass-crit', 'pug'))
 		gulp.watch(['./src/**/critical.{scss,sass}'], gulp.series('sass-crit', 'pug'))
 
 		// PUG
