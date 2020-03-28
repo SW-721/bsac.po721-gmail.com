@@ -1,40 +1,206 @@
 .login
-    display: flex
-    height: 100vh
-    input
-        background: $trp
-        border: 1px solid #fff
-        color: #fff
-        font-weight: 300
-        margin-bottom: 30px
-        border-radius: 5px
-        padding: 10px 25px
-    &--username, &--password
-        input
-            width: 370px
-    &--part
-        width: 50%
-        height: 100vh
-        &__left
-            background: url("../images/login.jpg")
-        &__right
-            background: #373737
-            position: relative
-    &--wrapper
-        position: absolute
-        top: 50%
-        left: 50%
-        transform: translate(-50%, -50%)
-    &--logo
-        margin-bottom: 30px
-        img
-            position: relative
-            left: 50%
-            transform: translateX(-50%)
-    &--form
-        background-color: $c-bg
-        padding: 30px 40px
-        border-radius: 5px
-    &--submit-line
-        display: flex
-        
+	display: flex
+	height: 100vh
+	&--row
+		margin-bottom: 20px
+		position: relative
+	input
+		background: $trp
+		border: 1px solid #fff
+		color: #fff
+		font-weight: 300
+		border-radius: 5px
+		padding: 10px 25px
+		&:focus
+			outline: none
+	&--username, &--password
+		input
+			width: 370px
+	&--part
+		width: 50%
+		height: 100vh
+		&__left
+			background: url("../images/login.jpg")
+			background-size: cover
+			background-position: top center
+		&__right
+			background: #373737
+			position: relative
+	&--wrapper
+		position: absolute
+		top: 50%
+		left: 50%
+		transform: translate(-50%, -50%)
+	&--logo
+		margin-bottom: 30px
+		img
+			position: relative
+			left: 50%
+			transform: translateX(-50%)
+	&--form
+		background-color: $c-bg
+		padding: 30px 40px
+		border-radius: 5px
+	&--submit-line
+		display: flex
+	&--remember-me
+		color: #fff
+		font-weight: 300
+		padding: 10px 10px 10px 30px
+		position: relative
+		label
+			user-select: none
+			cursor: pointer
+	&--chbx
+		display: none
+		& + .login--chbxToShow
+			$size: 20px;
+			
+			position: absolute
+			top: 50%
+			left: 0
+			width: $size
+			height: $size
+			border-radius: 50%
+			border: 1px solid #fff
+			transform: translateY(-50%)
+			// &:before
+			// 	content: ''
+			// 	display: block
+			// 	position: absolute
+			// 	height: 20px
+			// 	width: $size
+			// &:checked:after
+
+
+		& + .login--chbxToShow
+			&:after
+				content: ''
+				display: block
+				height: 6px
+				width: 6px
+				background-color: #fff
+				border-radius: 50%
+				position: absolute
+				top: 50%
+				left: 50%
+				transform: translate(-50%, -50%)
+				opacity: 0
+				transform: opacity .2s ease
+		&:checked + .login--chbxToShow
+			&:after
+				opacity: 1
+
+	&--hlf
+		width: 50%
+	&--submit
+		position: relative
+		overflow: hidden
+		input
+			width: 100%
+			transition: background .2s ease
+			margin-bottom: 0
+			cursor: pointer
+			&:hover
+				background-color: rgba(255,255,255,.15)
+		// код ниже отвечает за блики на кнопке
+		&::before, &::after
+			content: ""
+			display: block
+			height: 120%
+			position: absolute
+			top: 50%
+			transform: translateY(-50%) rotate(10deg)
+			transition: transform .3s ease-out
+		&::before
+			width: 12px
+			left: -10%
+			background-color: transparentize(#fff, .8)
+		&::after
+			width: 18px
+			left: -25%
+			background-color: transparentize(#fff, .6)
+		&:hover
+			&::before, &::after
+				transform: translateY(-50%) translateX(240px) rotate(25deg) 
+		// код выше отвечает за блики на кнопке
+
+
+
+	&--placeholder
+		position: absolute
+		color: transparentize($c-main-light, .4)
+		font-weight: 300
+		top: 50%
+		left: 18px
+		transform: translateY(-50%)
+		cursor: text
+		background: $c-bg
+		padding: 0 7px
+		transition: transform .2s ease
+		user-select: none
+		border-radius: 100px
+		&.hadFocus
+			// top: -2px
+			transform: translateY(-150%) scale(.8)
+			
+
+	.links
+		display: flex
+		flex-direction: column
+		&--item
+			margin-bottom: 10px
+			&:last-child
+				margin-bottom: 0
+		&--link
+			color: $c-main-light
+			font-weight: 300
+			text-decoration: none
+			opacity: .6
+			position: relative
+			// transition: opacity .1s linear
+			&:after
+				content: ''
+				display: block
+				position: absolute
+				bottom: 0
+				left: 0
+				width: 0
+				height: 1px
+				background-color: #fff
+				transition: width .2s ease-out
+			&:hover
+				opacity: .78
+				&:after
+					width: 100%
+
+@media screen and (max-width: 1024px)
+	.login
+		&--part
+			width: 100%
+			&__left
+				position: absolute
+				top: 0
+				left: 0
+				right: 0
+				bottom: 0
+			&__right
+				background: none
+		&--form
+			backdrop-filter: blur(10px)
+			background-color: transparentize($c-bg, .3)
+
+@media screen and (max-width: 425px)
+	.login
+		input
+			width: 100%
+		&--wrapper
+			width: 95%
+			margin: 0 auto
+		&--hlf
+			width: 100%
+		&--submit-line
+			flex-direction: column
+		&--remember-me
+			margin-bottom: 20px
+			padding: 0 0 0 30px

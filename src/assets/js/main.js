@@ -7,7 +7,9 @@
 
 import uiInits from './init';
 import progressLogo from '../../mixins/bridge-logo/script.js';
-import block from '../../blocks/block/script.js'
+// import block from '../../blocks/block/script.js'
+import sidePins from '../../blocks/sidePins/script.js'
+import login from '../../blocks/login/script.js'
 
 const ready = (callback) => {
 	document.readyState != "loading" ? callback() : document.addEventListener("DOMContentLoaded", callback);
@@ -18,5 +20,7 @@ ready(() => {
 	// inits
 	uiInits.init();
 	progressLogo.init();
-	block.init();
+	// block.init();
+	sidePins.init();
+	login.init();
 });

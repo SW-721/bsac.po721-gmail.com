@@ -15,15 +15,15 @@
         background-color: #fff
         border-radius: 50%
         margin-bottom: 15px
-        transition: transform .2s ease
-        .active
+        transition: transform .2s ease, height .2s ease, width .2s ease
+        &.active
             $size: 15px
             height: $size
             width: $size
         &:last-child
             margin-bottom: 0
         &:hover
-            transform: scale(1.2);
+            transform: scale(1.2)
 
     
 @media screen and (max-width: 1332px)

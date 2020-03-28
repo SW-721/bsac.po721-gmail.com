@@ -1,17 +1,27 @@
 .login
-    .login--part.login--part__left
-    .login--part.login--part__right
-        .login--wrapper
-            .login--logo
-                img(src="images/logo.svg", alt="logo")
-            form.login--form
-                .login--username
-                    input(type="text" placeholder="Логин")
-                .login--password
-                    input(type="password" placeholder="Пароль")
-                .login--submit-line
-                    .login--remember-me
-                        input(type="checkbox", name="rememberme")
-                        label(for="rememberme") Запомнить меня
-                    .login--submit
-                        input(type="submit" value="Войти")
+	.login--part.login--part__left
+	.login--part.login--part__right
+		.login--wrapper
+			.login--logo
+				a(href="index.html")
+					img(src="images/logo.svg", alt="logo")
+			form.login--form
+				.login--username.login--row
+					input.textinput(type="text" id="login")
+					label.login--placeholder(for="login") Логин
+				.login--password.login--row
+					input.textinput(type="password"  id="password")
+					label.login--placeholder(for="password") Пароль
+				.login--submit-line.login--row
+					.login--remember-me.login--hlf
+						label(for='rememberme')
+							input.login--chbx(type="checkbox" name="rememberme" id="rememberme")
+							.login--chbxToShow
+						label(for="rememberme") запомнить меня
+					.login--submit.login--hlf
+						input(type="submit" value="Войти")
+				.login--links.links
+					.links--item
+						a.links--link(href="#reg") Регистрация 
+					.links--item
+						a.links--link(href="rememberPass") Забыли пароль?
