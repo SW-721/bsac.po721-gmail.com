@@ -1,14 +1,17 @@
 footer.footer
 	.container
 		.row
-			nav.nav.col-md-4
-				.footer--title Навигация
-				.nav--list
-					a.nav--item(href="#main") Главная
-					a.nav--item(href="#startWith") Наше преимущество
-					a.nav--item(href="#types") Виды кредитов
-			.subscribe.col-md-4.offset-md-4
-				.footer--title Навигация
-				form.subscribe--form(action="")
-					input(type="email" placeholder="example@site.com").subscribe--input
-					input(type="submit" value="Подписаться").subscribe--submit
+			.col-12
+				.footer__inner
+					.nav
+						.footer--title Навигация
+						nav.nav--list
+							a.nav--item(href="#main") Главная
+							a.nav--item(href="#startWith") Наше преимущество
+							a.nav--item(href="#types") Виды кредитов
+
+					.subscribe
+						.footer--title Навигация
+						form.subscribe--form(action="")
+							input(type="email" placeholder="example@site.com").subscribe--input
+							input(type="submit" value="Подписаться").subscribe--submit

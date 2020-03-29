@@ -2,11 +2,26 @@
 	background-color: $c-bg
 	border-top: 5px solid $c-main
 	padding: 100px 0
+
+	+media($lg)
+		padding: 45px 0
+
+	&__inner
+		display: flex
+		justify-content: space-between
+
+		+media($lg)
+			flex-direction: column
+
 	&--title
 		font-size: 30px
 		color: $c-main-light
 		font-weight: 700
 	.nav
+
+		+media($lg)
+			margin-bottom: 50px
+
 		&--list
 			display: flex
 			flex-direction: column
@@ -15,6 +30,7 @@
 			font-size: 24px
 			color: $c-main-light
 			font-weight: 300
+	
 	.subscribe
 		&--form
 			display: flex
@@ -39,10 +55,8 @@
 			color: $c-main-light
 			padding: 10px 15px
 			border-radius: 0 10px 10px 0
+
+			+media($sm)
+				font-size: 14px
 			&:hover
 				background-color: rgba(255,255,255,.2)
-
-@media screen and (max-width: 768px)
-	.footer
-		.nav
-			margin-bottom: 70px

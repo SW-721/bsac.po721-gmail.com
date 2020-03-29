@@ -1,11 +1,14 @@
 .header.header__account
 	.container
-		.row.justify-content-between.align-items-end
-			.header--left.col-5
-				.header--logo.col-5
-					a(href="index.html") 
-						img(src="images/logo.svg" alt="logo" height="60px")
-				.header--title.col-7 Личный кабинет
-			.header--right.col-2
-				.header--account
-					a(href="account.html") <?php echo $name ?>
+		.row
+			.col-12
+				.header__inner
+					.header--left
+						.header--logo
+							a(href="index.html") 
+								img(src="images/logo.svg" alt="logo" height="60px")
+						.header--title Личный кабинет
+					
+					.header--right
+						.header--account
+							a(href="account.html") 123 <?php echo $name ?>
