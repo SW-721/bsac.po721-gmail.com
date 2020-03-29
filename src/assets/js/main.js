@@ -10,6 +10,9 @@ import progressLogo from '../../mixins/bridge-logo/script.js';
 // import block from '../../blocks/block/script.js'
 import sidePins from '../../blocks/sidePins/script.js'
 import login from '../../blocks/login/script.js'
+import swiper from './vendor/swiper.min.js' //using into types/style.js
+import main from '../../blocks/account/main/script.js'
+import types from '../../blocks/types/script.js'
 
 const ready = (callback) => {
 	document.readyState != "loading" ? callback() : document.addEventListener("DOMContentLoaded", callback);
@@ -23,4 +26,6 @@ ready(() => {
 	// block.init();
 	sidePins.init();
 	login.init();
+	main.init();
+	types.init();
 });

@@ -1,0 +1,23 @@
+.sidemenu
+	padding-right: 15px
+	&--nav
+		background-color: $c-bg
+		border-radius: 5px
+		overflow: hidden
+	&--item
+		border-bottom: 1px solid #fff
+		&:last-child
+			border-bottom: 0
+		&.active
+			background: #4c4c4c
+	&--link
+		color: #fff
+		display: block
+		text-decoration: none
+		font-size: 30px
+		padding: 10px 30px
+		cursor: pointer
+		transition: background .1s ease
+		&:hover
+			text-decoration: none
+			background: rgba(255,255,255,.2)

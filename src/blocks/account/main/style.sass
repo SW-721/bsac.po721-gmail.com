@@ -1,0 +1,53 @@
+.main
+	background-color: #373737
+	height: 100vh
+	padding-top: 120px
+	color: $c-main-light
+	&--item
+		background-color: $c-bg
+		margin-bottom: 20px
+		padding: 20px 25px
+		border-radius: 5px
+	.item
+		height: 200px
+		display: flex
+		flex-direction: column
+		justify-content: space-between
+		&--horizontal-line
+			height: 1px
+			background-color: rgba(255,255,255, .2)
+		&--title
+			// padding-bottom: 10px
+			position: relative
+			height: 67px
+		&--image
+			height: 30px
+			position: absolute
+			left: 0
+		&--name
+			font-size: 24px
+			padding-left: 45px
+		&--amount-wrapper
+			margin: 15px auto 0
+			padding-left: 45px
+			font-size: 30px
+			position: relative
+			width: max-content
+		&--refresh
+			display: block
+			position: absolute
+			left: 0
+			top: 50%
+			height: 30px
+			transform: translateY(-50%)
+			cursor: pointer
+			// transition: transform 1s ease
+			&.anim
+				// transform: translateY(-50%) rotate(360deg)
+				animation: rotate 1s ease
+
+@keyframes rotate
+	from
+		transform: translateY(-50%) rotate(0deg)
+	to
+		transform: translateY(-50%) rotate(360deg)

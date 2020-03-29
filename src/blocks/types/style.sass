@@ -1,61 +1,94 @@
 .types
-    background-color: $c-bg
-    display: flex
-    flex-direction: column
-    justify-content: center
-    &--title
-        text-align: center
-        color: $c-main-light
-        font-weight: 700
-        font-size: 48px
-        padding: 70px 0 70px;
-    .swiper
-        height: 20%
-        flex-grow: 1
-        &--item
-            position: relative
-            padding: 100px 0
-        &--image
-            position: absolute
-            top: 0
-            bottom: 0
-            left: 0
-            right: 0
-            z-index: 1
-            overflow: hidden
-            height: 100%
-            img
-                object-fit: cover
-                object-position: bottom center
-        &--content
-            position: relative
-            z-index: 15
-            color: $c-main-light
-        &--title
-            font-size: 36px
-            font-weight: 700
-            margin-bottom: 50px
-        &--subtitle
-            font-size: 30px
-            font-weight: 300
-        
-        .info
-            &--item
-                display: flex
-                align-items: center
-                position: relative
-            &--image
-                position: absolute
-                top: 50%
-                transform: translateY(-50%)
-                width: 72px
-                img
-                    display: block
-                    position: absolute
-                    left: 50%
-                    top: 0
-                    transform: translate(-50%, -50%)
-            &--text
-                font-weight: 300
-                font-size: 65px
-                padding-left: 95px
+	background-color: $c-bg
+	display: flex
+	flex-direction: column
+	justify-content: center
+	// height: auto
+	&--title
+		text-align: center
+		color: $c-main-light
+		font-weight: 700
+		font-size: 48px
+		padding: 70px 0 70px
+	.swiper
+		height: 100%
+		width: 100%
+		min-height: max-content
+		flex-grow: 1
+		.container
+			display: flex
+			flex-direction: column
+			justify-content: space-between
+		&--item
+			position: relative
+			padding: 100px 0
+			height: 100%
+		&--image
+			position: absolute
+			top: 0
+			bottom: 0
+			left: 0
+			right: 0
+			z-index: 1
+			overflow: hidden
+			height: 100%
+			img
+				object-fit: cover
+				object-position: bottom center
+				width: 100%
+		&--content
+			position: relative
+			z-index: 15
+			color: $c-main-light
+		&--title
+			font-size: 36px
+			font-weight: 700
+			margin-bottom: 50px
+			text-align: left
+		&--subtitle
+			font-size: 30px
+			font-weight: 300
+			margin-bottom: 20px
+			text-align: left
+		&-pagination
+			left: 50%
+			transform: translateX(-50%)
+			&-bullet
+				$size: 15px
+				width: $size
+				height: $size
+				background-color: #fff
+				&-active
+					background-color: #fff
+		&-button
+			&-prev
+				left: 120px
+				background: url("../images/prev.svg")
+				background-size: cover
+				color: white
+				height: 50px
+			&-next
+				right: 120px
+				background: url("../images/next.svg")
+				background-size: cover
+		
+		.info
+			&--item
+				display: flex
+				align-items: center
+				position: relative
+			&--image
+				position: absolute
+				top: 50%
+				transform: translateY(-50%)
+				width: 72px
+				img
+					display: block
+					position: absolute
+					left: 50%
+					top: 0
+					transform: translate(-50%, -50%) scale(1.5)
+			&--text
+				font-weight: 300
+				font-size: 65px
+				padding-left: 95px

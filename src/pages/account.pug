@@ -4,7 +4,7 @@ block vars
 	- var bodyClass = ''
 	- var footerClass = ''
 	- var headerClass = ''
-	- var pageTitle = 'Abus: главная'
+	- var pageTitle = 'Abus: личный кабинет'
 	- var dir = './'
 	- var layout = ''
 	- var componentsList = []
@@ -14,11 +14,8 @@ block vars
 
 block main
 
-	include ../blocks/hero/hero
-	include ../blocks/startWith/startWith
-	include ../blocks/types/types
-	include ../blocks/sidePins/sidePins
-	include ../partials/footer/footer
+	include ../blocks/account/header/header.pug
+	include ../blocks/account/main/main.pug
 	
 
 block popups
@@ -34,5 +31,3 @@ block popups
 
 block scripts
 	script(src='./js/vendor/fullpage2.min.js')
-	script(src="file.js")
-	

@@ -3,6 +3,7 @@
 	background-position: center center
 	background-size: cover
 	position: relative
+	min-height: 500px
 	.header
 		position: absolute
 		top: 20px
@@ -60,6 +61,19 @@
 		left: 50%
 		bottom: 50px
 		transform: translateX(-50%)
+		animation: float 3s ease-in-out infinite
+
+@keyframes float
+	0%
+		transform: translateX(-50%) translatey(0px)
+	
+	50%
+		transform: translateX(-50%) translatey(-20px)
+	
+	100%
+		transform: translateX(-50%) translatey(0px)
+	
+
 
 @media screen and (max-width: 1332px)
 	.hero
