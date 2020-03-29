@@ -1,13 +1,24 @@
+- var info = {"dashboard": "Главная", "accounts": "Счета", "credits": "Кредиты", "data": "Личные данные", "logout": "Выйти"}
 .sidemenu
 	nav.sidemenu--nav
 		ul.sidemenu--list
-			li.sidemenu--item.active
-				a.sidemenu--link(href="#") Главная
-			li.sidemenu--item
-				a.sidemenu--link(href="#") Счета
-			li.sidemenu--item
-				a.sidemenu--link(href="#") Кредиты
-			li.sidemenu--item
-				a.sidemenu--link(href="#") Личные данные
-			li.sidemenu--item
-				a.sidemenu--link(href="#") Выйти
+
+			each val, name in info
+				- if(page == val) {
+					li.sidemenu--item.active
+						a.sidemenu--link(href=name+".html")= val
+				- } else {
+					li.sidemenu--item
+						a.sidemenu--link(href=name+".html")= val
+				- }
+
+			//- li.sidemenu--item.active
+			//- 	a.sidemenu--link(href="#") Главная
+			//- li.sidemenu--item
+			//- 	a.sidemenu--link(href="#") Счета
+			//- li.sidemenu--item
+			//- 	a.sidemenu--link(href="#") Кредиты
+			//- li.sidemenu--item
+			//- 	a.sidemenu--link(href="#") Личные данные
+			//- li.sidemenu--item
+			//- 	a.sidemenu--link(href="#") Выйти

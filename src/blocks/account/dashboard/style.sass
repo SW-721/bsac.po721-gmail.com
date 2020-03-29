@@ -3,13 +3,16 @@
 	min-height: 100vh
 	padding-top: 120px
 	color: $c-main-light
+
+	+media($md)
+		padding-top: 180px
 	&--item
 		background-color: $c-bg
 		margin-bottom: 20px
 		padding: 20px 25px
 		border-radius: 5px
 	.item
-		height: 200px
+		min-height: 200px
 		display: flex
 		flex-direction: column
 		justify-content: space-between
@@ -19,7 +22,7 @@
 		&--title
 			// padding-bottom: 10px
 			position: relative
-			height: 67px
+			min-height: 67px
 		&--image
 			height: 30px
 			position: absolute

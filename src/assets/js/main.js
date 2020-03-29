@@ -11,7 +11,7 @@ import progressLogo from '../../mixins/bridge-logo/script.js';
 import sidePins from '../../blocks/sidePins/script.js'
 import login from '../../blocks/login/script.js'
 import swiper from './vendor/swiper.min.js' //using into types/style.js
-import main from '../../blocks/account/main/script.js'
+import dashboard from '../../blocks/account/dashboard/script.js'
 import types from '../../blocks/types/script.js'
 
 const ready = (callback) => {
@@ -26,6 +26,6 @@ ready(() => {
 	// block.init();
 	sidePins.init();
 	login.init();
-	main.init();
+	dashboard.init();
 	types.init();
 });

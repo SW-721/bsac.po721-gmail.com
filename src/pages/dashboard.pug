@@ -4,7 +4,7 @@ block vars
 	- var bodyClass = ''
 	- var footerClass = ''
 	- var headerClass = ''
-	- var pageTitle = 'Abus: логин'
+	- var pageTitle = 'Abus: личный кабинет'
 	- var dir = './'
 	- var layout = ''
 	- var componentsList = []
@@ -14,7 +14,8 @@ block vars
 
 block main
 
-	include ../blocks/login/login
+	include ../blocks/account/header/header.pug
+	include ../blocks/account/dashboard/dashboard.pug
 	
 
 block popups

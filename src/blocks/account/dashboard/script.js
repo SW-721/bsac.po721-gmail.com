@@ -1,4 +1,4 @@
-const main = {
+const dashboard = {
 	init() {
 		let elems = document.querySelectorAll('.item--refresh');
 		console.log(elems)
@@ -17,4 +17,4 @@ const main = {
 	}
 }
 
-export default main
+export default dashboard

@@ -1,5 +1,9 @@
 .sidemenu
 	padding-right: 15px
+
+	+media($md)
+		padding-right: 0
+		margin-bottom: 20px
 	&--nav
 		background-color: $c-bg
 		border-radius: 5px
@@ -18,6 +22,9 @@
 		padding: 10px 30px
 		cursor: pointer
 		transition: background .1s ease
+
+		+media($xl)
+			font-size: 20px
 		&:hover
 			text-decoration: none
 			background: rgba(255,255,255,.2)
