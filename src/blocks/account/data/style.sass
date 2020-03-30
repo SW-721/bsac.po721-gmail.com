@@ -1,0 +1,95 @@
+.main
+	background-color: #373737
+	min-height: 100vh
+	padding-top: 120px
+	color: $c-main-light
+
+	+media($lg)
+
+.data
+	$lighten: 0
+
+	&--form
+		display: flex
+		flex-wrap: wrap
+		justify-content: space-between
+
+		+media($lg)
+			justify-content: center
+
+	&--item
+		position: relative
+		margin-right: 20px
+		
+		+media($lg)
+			width: 100%
+
+		&:not(:last-child)
+			margin-bottom: 20px
+
+		input
+			background: lighten($c-bg, $lighten)
+			border: 1px solid #fff
+			width: 100%
+			color: #fff
+			font-weight: 300
+			border-radius: 5px
+			padding: 10px 25px
+			transition: border .2s ease
+			&:focus
+				outline: none
+			&.error
+				border: 1px solid #e22f2f
+	&--settings
+		background-color: $c-bg
+		border-radius: 5px
+		padding: 20px 50px
+	&--placeholder
+		position: absolute
+		color: transparentize($c-main-light, .4)
+		font-weight: 300
+		top: 50%
+		left: 18px
+		transform: translateY(-50%)
+		cursor: text
+		background: lighten($c-bg, $lighten)
+		padding: 0 7px
+		transition: transform .2s ease
+		user-select: none
+		border-radius: 100px
+		transform-origin: left center
+		&.hadFocus
+			// top: -2px
+			transform: translateY(-150%) scale(.8)
+	
+	&--submit
+		overflow: hidden
+	
+		&::before, &::after
+			content: ""
+			display: block
+			height: 120%
+			position: absolute
+			top: 50%
+			transform: translateY(-50%) rotate(10deg)
+			transition: transform .3s ease-out
+
+		&::before
+			width: 12px
+			left: -10%
+			background-color: transparentize(#fff, .8)
+
+		&::after
+			width: 18px
+			left: -25%
+			background-color: transparentize(#fff, .6)
+
+		&:hover
+
+			input
+				background: lighten($c-bg, $lighten+5)
+				&:active
+					background: lighten($c-bg, $lighten+10)
+
+			&::before, &::after
+				transform: translateY(-50%) translateX(2000%) rotate(25deg) 

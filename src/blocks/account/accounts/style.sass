@@ -4,7 +4,7 @@
 	padding-top: 120px
 	color: $c-main-light
 
-	+media($md)
+	+media($lg)
 		padding-top: 180px
 
 	&--item
@@ -18,6 +18,9 @@
 		&:not(:last-child)
 			margin-bottom: 15px
 
+		+media($md)
+			flex-direction: column 
+
 		&--plus
 			padding: 0
 
@@ -28,12 +31,20 @@
 				background-color: lighten($c-bg, 25)
 
 	&--buttons
-		width: 33.3333%
+		text-align: right
+
+		a
+			color: #ffffff
+
+	&--value, &--name, &--buttons
+		width: 100%
+
+		&:not(:last-child)
+			margin-bottom: 20px
 
 	&--value, &--name
 		font-size: 32px
-		width: 33.3333%
-
+		
 		+media($lg)
 			font-size: 24px
 
@@ -47,6 +58,7 @@
 		left: 0
 		top: 50%
 		transform: translateY(-50%)
+		cursor: pointer
 		&.anim
 				// transform: translateY(-50%) rotate(360deg)
 				animation: rotate 1s ease

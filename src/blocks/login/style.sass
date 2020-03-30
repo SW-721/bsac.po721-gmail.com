@@ -1,6 +1,13 @@
 .login
 	display: flex
 	height: 100vh
+
+	&--title
+		color: #fff
+		font-weight: 300
+		text-align: center
+		margin-bottom: 10px
+
 	&--row
 		margin-bottom: 20px
 		position: relative
@@ -11,9 +18,12 @@
 		font-weight: 300
 		border-radius: 5px
 		padding: 10px 25px
+		transition: border .2s ease
 		&:focus
 			outline: none
-	&--username, &--password
+		&.error
+			border: 1px solid #e22f2f
+	&--text
 		input
 			width: 370px
 	&--part
@@ -103,6 +113,7 @@
 			cursor: pointer
 			&:hover
 				background-color: rgba(255,255,255,.15)
+
 		// код ниже отвечает за блики на кнопке
 		&::before, &::after
 			content: ""
@@ -123,7 +134,16 @@
 		&:hover
 			&::before, &::after
 				transform: translateY(-50%) translateX(240px) rotate(25deg) 
+
+		&--register
+			&::before, &::after				
+				transition: transform .5s ease-out
+			&:hover
+				&::before, &::after
+					transform: translateY(-50%) translateX(480px) rotate(25deg) 
 		// код выше отвечает за блики на кнопке
+
+			
 
 
 
@@ -140,6 +160,7 @@
 		transition: transform .2s ease
 		user-select: none
 		border-radius: 100px
+		transform-origin: left center
 		&.hadFocus
 			// top: -2px
 			transform: translateY(-150%) scale(.8)
@@ -175,7 +196,8 @@
 					width: 100%
 			&.message
 				opacity: .78
-
+	.hide
+		display: none
 
 @media screen and (max-width: 1024px)
 	.login

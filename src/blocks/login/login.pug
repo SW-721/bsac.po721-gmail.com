@@ -5,23 +5,46 @@
 			.login--logo
 				a(href="index.html")
 					img(src="images/logo.svg", alt="logo")
-			form.login--form
-				.login--username.login--row
-					input.textinput(type="text" id="login")
-					label.login--placeholder(for="login") Логин
-				.login--password.login--row
-					input.textinput(type="password"  id="password")
+			form.login--form.login--form--login
+				.login--username.login--text.login--row
+					input.textinput(id="email" type="text")
+					label.login--placeholder(for="email") Почта
+				.login--password.login--text.login--row
+					input.textinput(id="password" type="password")
 					label.login--placeholder(for="password") Пароль
 				.login--submit-line.login--row
 					.login--remember-me.login--hlf
 						label(for='rememberme')
-							input.login--chbx(type="checkbox" name="rememberme" id="rememberme")
+							input.login--chbx(id="rememberme" name="rememberme" type="checkbox")
 							.login--chbxToShow
 						label(for="rememberme") запомнить меня
 					.login--submit.login--hlf
 						input(type="submit" value="Войти")
 				.login--links.links
 					.links--item
-						a.links--link(href="#reg") Регистрация 
+						a.links--link.change(href="#reg") Регистрация 
 					.links--item
 						a.links--link(href="rememberPass") Забыли пароль?
+
+			form.login--form.login--form--register.hide
+				h2.login--title Регистрация
+				.login--firstname.login--text.login--row
+					input.textinput(name="firstname" id="firstname" type="text")
+					label.login--placeholder(for="firstname") Имя
+				.login--lastname.login--text.login--row
+					input.textinput(name="lastname" id="lastname" type="text")
+					label.login--placeholder(for="lastname") Фамилия
+				.login--username.login--text.login--row
+					input.textinput(name="email" id="regemail" type="email")
+					label.login--placeholder(for="regemail") Почта
+				.login--password.login--text.login--row
+					input.textinput(id="regpassword" name="password" type="password")
+					label.login--placeholder(for="regpassword") Пароль
+				.login--secondpassword.login--text.login--row
+					input.textinput(id="secondpassword" name="secondpassword" type="password")
+					label.login--placeholder(for="secondpassword") Повторите пароль
+				.login--submit.login--submit--register.login--row
+					input(type="submit" value="Зарегистрироваться")
+				.login--links.links
+					.links--item
+						a.links--link.change(href="#reg") Уже есть профиль

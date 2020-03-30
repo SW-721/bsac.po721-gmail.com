@@ -1,0 +1,30 @@
+- var page = "Личные данные"
+.main.data
+	.container
+		.row
+			.col-md-3
+				.main--side-menu
+					include ../sidemenu/sidemenu.pug
+			.col-md-9
+				.data--settings
+					form.data--form(action="")
+						.data--item
+							input.textinput(id="firstname" name="firstname" type="text")
+							label.data--placeholder(for="firstname") Имя
+						.data--item
+							input.textinput(id="lastname" name="lastname" type="text")
+							label.data--placeholder(for="lastname") Фамилия
+						.data--item
+							input.textinput(id="email" name="email" type="text")
+							label.data--placeholder(for="email") Почта
+						.data--item
+							input.textinput(id="oldPass" name="oldPass" type="text")
+							label.data--placeholder(for="oldPass") Старый пароль
+						.data--item
+							input.textinput(id="newPass1" name="newPass1" type="text")
+							label.data--placeholder(for="newPass1") Новый пароль
+						.data--item
+							input.textinput(id="newPass2" name="newPass2" type="text")
+							label.data--placeholder(for="newPass2") повторите новый пароль
+						.data--item.data--submit
+							input(type="submit" value="Сохранить данные")

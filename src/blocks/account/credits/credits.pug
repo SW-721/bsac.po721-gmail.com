@@ -2,8 +2,20 @@
 .credits
 	.container
 		.row
-			.credits--side-menu.col-md-3
-				include ../sidemenu/sidemenu.pug
-			.credits--content.col-md-9
-				p.
-					there is will be content
+			.col-md-3
+				.credits--side-menu
+					include ../sidemenu/sidemenu.pug
+			.col-md-9
+				.accounts--content
+					.accounts--item
+						.accounts--name кредит
+						.accounts--value
+							img.accounts--image(src="images/refresh.svg", alt="refresh")
+							span 122
+							span BYN
+						.accounts--buttons
+							.accounts--button погасить
+					.accounts--item.accounts--item--plus
+						button.accounts--add
+							span.accounts--horisontal
+							span.accounts--vertical

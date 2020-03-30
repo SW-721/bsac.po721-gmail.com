@@ -13,6 +13,7 @@ import login from '../../blocks/login/script.js'
 import swiper from './vendor/swiper.min.js' //using into types/style.js
 import dashboard from '../../blocks/account/dashboard/script.js'
 import accounts from '../../blocks/account/accounts/script.js'
+import data from '../../blocks/account/data/script.js'
 import types from '../../blocks/types/script.js'
 
 const ready = (callback) => {
@@ -30,4 +31,5 @@ ready(() => {
 	dashboard.init();
 	accounts.init();
 	types.init();
+	data.init();
 });
