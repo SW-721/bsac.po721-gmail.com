@@ -12,6 +12,7 @@ import sidePins from '../../blocks/sidePins/script.js'
 import login from '../../blocks/login/script.js'
 import swiper from './vendor/swiper.min.js' //using into types/style.js
 import dashboard from '../../blocks/account/dashboard/script.js'
+import accounts from '../../blocks/account/accounts/script.js'
 import types from '../../blocks/types/script.js'
 
 const ready = (callback) => {
@@ -27,5 +28,6 @@ ready(() => {
 	sidePins.init();
 	login.init();
 	dashboard.init();
+	accounts.init();
 	types.init();
 });

@@ -6,3 +6,79 @@
 
 	+media($md)
 		padding-top: 180px
+
+	&--item
+		background-color: $c-bg
+		display: flex
+		border-radius: 5px
+		padding: 10px 25px
+		justify-content: space-around
+		align-items: center
+		
+		&:not(:last-child)
+			margin-bottom: 15px
+
+		&--plus
+			padding: 0
+
+			&:hover
+				background-color: lighten($c-bg, 20)
+
+			&:active
+				background-color: lighten($c-bg, 25)
+
+	&--buttons
+		width: 33.3333%
+
+	&--value, &--name
+		font-size: 32px
+		width: 33.3333%
+
+		+media($lg)
+			font-size: 24px
+
+	&--value
+		position: relative
+		padding-left: 40px
+
+	&--image
+		height: 30px
+		position: absolute
+		left: 0
+		top: 50%
+		transform: translateY(-50%)
+		&.anim
+				// transform: translateY(-50%) rotate(360deg)
+				animation: rotate 1s ease
+
+	&--add
+		height: 100%
+		width: 100%
+		background-color: $trp
+		border: 0
+		padding: 20px
+		position: relative
+		cursor: pointer
+		outline: 0
+	
+	&--vertical, &--horisontal
+		display: block
+		background-color: #fff
+		position: absolute
+		left: 50%
+		top: 50%
+		transform: translate(-50%, -50%)
+
+	&--vertical
+		width: 15px
+		height: 2px
+
+	&--horisontal
+		width: 2px
+		height: 15px
+
+@keyframes rotate
+	from
+		transform: translateY(-50%) rotate(0deg)
+	to
+		transform: translateY(-50%) rotate(360deg)
